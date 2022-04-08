@@ -9,7 +9,11 @@
 <body>
 <header>
     <x-navbar></x-navbar>
-    <x-header>{{$header}}</x-header>
+    @if($headertype ?? null == 'nfl')
+        <x-nfl-header>{{$header}}</x-nfl-header>
+    @else
+        <x-header>{{$header}}</x-header>
+    @endif
 </header>
 
 {{ $slot }}

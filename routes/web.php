@@ -19,14 +19,6 @@ Route::get('/page-1', function () {
     return view('page-1');
 });
 
-Route::get('/page-2/{amount}', [PageController::class, 'page2']);
-
-Route::get('/data/{amount}', function ($amount) {
-    $response = Http::withHeaders([
-        'x-rapidapi-host' => 'free-nba.p.rapidapi.com',
-        'x-rapidapi-key' => 'e5d8563997mshcfb030c802400d3p1ec262jsn6864acf2d34a'
-    ])->get('https://free-nba.p.rapidapi.com/teams?page=0');
-
-    return collect(json_decode($response))->paginate($amount);
-});
+Route::get('/page-2', [PageController::class, 'index'])->name('page2.index');
+Route::get('/page-2/get-data', [PageController::class, 'getData'])->name('page2.get-data');
 

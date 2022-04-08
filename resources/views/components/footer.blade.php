@@ -39,4 +39,8 @@
     .footer-bg-color {
         background-color: #3a3939;
     }
+
+    .c-background{
+        background-color: #ec4949;
+    }
 </style>

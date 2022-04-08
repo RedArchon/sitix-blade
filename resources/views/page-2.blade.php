@@ -1,22 +1,87 @@
 <x-layout>
+    <head>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+        <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    </head>
     <x-slot:title>Page1</x-slot:title>
-    <x-slot:header>{{asset('storage/crowdwide.jpeg')}}</x-slot:header>
-    <x-categories></x-categories>
-    <hr style="margin-left: 4rem; margin-right: 4rem;">
-    <x-trending></x-trending>
-    <div class="bg-gray-300 py-6">
-
-        <div class="grid grid-cols-1 place-content-center">
-            <img src="{{asset('storage/concerts.jpeg')}}" alt="alt" class="mx-auto">
-
-            <div class="mx-auto mt-8 mb-8">
-                <button
-                    class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-medium rounded-full drop-shadow-lg">
-                    Learn More
-                </button>
+    <x-slot:header>{{asset('storage/nflbackground.jpeg')}}</x-slot:header>
+    <x-slot:headertype>{{'nfl'}}</x-slot:headertype>
+    <div class="w-full">
+        <div class="grid grid-cols-4 gap-2">
+            <div class="col-span-1">
+                <img src="{{asset('storage/byteam.png')}}" alt="byteam">
             </div>
-
+            <div class="col-span-1">
+                <img src="{{asset('storage/bygame.png')}}" alt="bygame">
+            </div>
+            <div class="col-span-2">
+                <img src="{{asset('storage/distance.png')}}"  alt="distance">
+            </div>
         </div>
     </div>
+    <div class="w-full px-4">
+        <table class="table yajra-dt">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Abbreviation</th>
+                <th>City</th>
+                <th>Conference</th>
+                <th>Full Name</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var table = $('.yajra-dt').DataTable({
+                processing: true,
+                serverSide: true,
+                lengthMenu: [[5, 10, -1], [5, 10, 'All']],
+                ajax: "{{route('page2.get-data')}}",
+                skipPaging: true,
+                columns: [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex'
+                },
+                    {
+                        data: 'abbreviation',
+                        name: 'abbreviation'
+                    },
+                    {
+                        data: 'city',
+                        name: 'city'
+                    },
+                    {
+                        data: 'conference',
+                        name: 'conference'
+                    },
+                    {
+                        data: 'full_name',
+                        name: 'full_name'
+                    },
+                    {
+                        data: 'name',
+                        name: 'name'
+                    },
+                ]
+            });
+
+        });
+    </script>
+
+
 </x-layout>
 
