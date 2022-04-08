@@ -29,4 +29,9 @@ class PageController extends Controller
             return $data;
         }
     }
+
+    public function page3()
+    {
+        return view('page-3');
+    }
 }

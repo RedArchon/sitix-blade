@@ -8,19 +8,6 @@
     <x-slot:title>Page1</x-slot:title>
     <x-slot:header>{{asset('storage/nflbackground.jpeg')}}</x-slot:header>
     <x-slot:headertype>{{'nfl'}}</x-slot:headertype>
-    <div class="w-full">
-        <div class="grid grid-cols-4 gap-2">
-            <div class="col-span-1">
-                <img src="{{asset('storage/byteam.png')}}" alt="byteam">
-            </div>
-            <div class="col-span-1">
-                <img src="{{asset('storage/bygame.png')}}" alt="bygame">
-            </div>
-            <div class="col-span-2">
-                <img src="{{asset('storage/distance.png')}}"  alt="distance">
-            </div>
-        </div>
-    </div>
     <div class="w-full px-4">
         <table class="table yajra-dt">
             <thead>
