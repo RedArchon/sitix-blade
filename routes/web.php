@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/page-1', function () {
     return view('page-1');
 });
+
+Route::get('/page-2/{amount}', [PageController::class, 'page2']);
 
 Route::get('/data/{amount}', function ($amount) {
     $response = Http::withHeaders([
