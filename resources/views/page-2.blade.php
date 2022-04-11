@@ -12,7 +12,6 @@
         <table class="table yajra-dt">
             <thead>
             <tr>
-                <th>Id</th>
                 <th>Abbreviation</th>
                 <th>City</th>
                 <th>Conference</th>
@@ -39,10 +38,7 @@
                 lengthMenu: [[5, 10, -1], [5, 10, 'All']],
                 ajax: "{{route('page2.get-data')}}",
                 skipPaging: true,
-                columns: [{
-                    data: 'DT_RowIndex',
-                    name: 'DT_RowIndex'
-                },
+                columns: [
                     {
                         data: 'abbreviation',
                         name: 'abbreviation'

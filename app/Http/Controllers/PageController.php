@@ -13,21 +13,16 @@ class PageController extends Controller
     {
         return view('page-2');
     }
-    public function getData(Request $request)
+    public function getData()
     {
-        if ($request->ajax()) {
-            $data = Reportable::latest()->get();
-            $data = Datatables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($row){
-                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+        $response = Http::withHeaders([
+            'x-rapidapi-host' => 'free-nba.p.rapidapi.com',
+            'x-rapidapi-key' => 'e5d8563997mshcfb030c802400d3p1ec262jsn6864acf2d34a'
+        ])->get('https://free-nba.p.rapidapi.com/teams?page=0');
 
-            return $data;
-        }
+        $response = collect(json_decode($response));
+
+        return collect($response['data'])->paginate(-1);
     }
 
     public function page3()
