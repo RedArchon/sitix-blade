@@ -8,10 +8,9 @@
                 </div>
 
                 <div class="hidden sm:flex sm:items-center">
-                    <a href="#" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">SPORTS</a>
-                    <a href="#" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">CONCERTS</a>
-                    <a href="#" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">THEATER</a>
-                    <a href="#" class="text-gray-800 text-sm font-semibold hover:text-purple-600">MORE</a>
+                    <a href=/page-1 class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">Page1</a>
+                    <a href="/page-2" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">Page2</a>
+                    <a href="/page-3" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">Page3</a>
                 </div>
 
                 <div class="hidden sm:flex sm:items-center">
@@ -27,10 +26,9 @@
 
             <div class="block sm:hidden bg-white border-t-2 py-2">
                 <div class="flex flex-col">
-                    <a href="#" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">SPORTS</a>
-                    <a href="#" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">CONCERTS</a>
-                    <a href="#" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">THEATER</a>
-                    <a href="#" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">MORE</a>
+                    <a href="/page-1" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">Page1</a>
+                    <a href=/page-2#" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">Page2</a>
+                    <a href="/page-3" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">Page3</a>
                     <div class="flex justify-between items-center border-t-2 pt-2">
                         <a href="#" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">MY TICKETS</a>
                     </div>
