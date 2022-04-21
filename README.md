@@ -9,5 +9,4 @@ This project was built using [Laravel Sail](https://laravel.com/docs/9.x/sail#ma
 - `./vendor/bin/sail build --no-cache` or use whichever alias you may have set for `./vendor/bin/sail` and then 
 - Configure your MySQL connection using the credentials provided in `.env` and create a schema/database named `sitix_blade`
 - `php artisan sail:install` and choose `mysql`
-- `./vendor/bin/sail npm install && npm run dev`
-- Open your browser and head to `sitix-blade.test` or `localhost`
+- `./vendor/bin/sail artisan test`
